@@ -5,8 +5,10 @@
     <input type='submit' class='button button1' name='list_space' value='List a space'>
   </form>
   <ul>
-    <%=$name%>
-    <%=$description%>
-    £<%=$price_per_night%> per night
+    <% unless @result_db.nil? %>
+    <%=@result_db.name%>
+    <%=@result_db.description%>
+    <%=@result_db.price_per_night%> per night
+    <% end %>
   </ul>
 </body>

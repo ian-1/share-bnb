@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-# require_relative 'database_connection_setup'
+require_relative 'database_connection_setup'
+require_relative 'lib/space'
 
 class MakersBnb < Sinatra::Base
   configure :development do
@@ -10,10 +11,8 @@ class MakersBnb < Sinatra::Base
   enable :sessions
 
   get '/' do
-    p $name
-    p $description
-    p $price_per_night
-    erb :index 
+    @result_db = Space.all.last
+    erb :index
   end
 
   get '/space/new' do
@@ -21,9 +20,10 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/space' do
-    $name = params[:name]
-    $description = params[:description]
-    $price_per_night = params[:price_per_night]
+    name = params[:name]
+    description = params[:description]
+    price_per_night = params[:price_per_night]
+    Space.create(name: name, description: description, price_per_night: price_per_night)
     redirect '/'
   end
   run! if app_file == $PROGRAM_NAME

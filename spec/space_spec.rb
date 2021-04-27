@@ -38,7 +38,7 @@ describe Space do
       price_per_night = '$10.00'
 
       described_class.create(name: name, description: description, price_per_night: price_per_night)
-      space_from_db = described_class.all
+      space_from_db = described_class.all.last
 
       expect(space_from_db.name).to eq name
       expect(space_from_db.description).to eq description

@@ -13,8 +13,8 @@ class Space
 
   def self.all
     result = DatabaseConnection.query('SELECT * FROM space;')
-    Space.new(name: result[0]['name'], description: result[0]['description'],
-              price_per_night: result[0]['price_per_night'])
+    result.map { |row| Space.new(name: row['name'], description: row['description'],
+              price_per_night: row['price_per_night']) }
   end
 
   def self.update(name:)

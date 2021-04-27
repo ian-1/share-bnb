@@ -11,7 +11,7 @@ feature 'Homepage' do
     expect(current_path).to eq '/'
     expect(page).to have_content '10 Downing street'
     expect(page).to have_content 'Lovely gaff'
-    expect(page).to have_content '£100000 per night'
+    expect(page).to have_content '$100,000.00 per night'
   end
 end
 
@@ -22,5 +22,3 @@ feature 'List a space button' do
     expect(current_path).to eq '/space/new'
   end
 end
-
-
