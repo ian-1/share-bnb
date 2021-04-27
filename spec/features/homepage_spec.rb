@@ -5,3 +5,13 @@ feature 'Homepage' do
   end
   
 end
+
+feature 'List a space button' do
+  scenario 'A user can list a space' do
+    visit '/'
+    click_button 'List a space'
+    expect(current_path).to eq '/space/new'
+  end
+end
+
+
