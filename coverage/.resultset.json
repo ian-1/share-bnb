@@ -109,12 +109,31 @@
           1,
           null,
           null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
           null
         ]
       },
       "/Users/m/Projects/makersbnb/lib/space.rb": {
         "lines": [
           1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
           null,
           1,
           1,
@@ -124,6 +143,6 @@
         ]
       }
     },
-    "timestamp": 1619525246
+    "timestamp": 1619531813
   }
 }
