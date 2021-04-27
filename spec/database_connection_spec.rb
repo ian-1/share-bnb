@@ -18,7 +18,7 @@ describe DatabaseConnection do
 
   describe '.query' do
     it 'executes a query' do
-      connection = described_class.setup('makersbnb')
+      connection = described_class.setup('makersbnb_test')
 
       allow(connection).to receive(:exec)
 
