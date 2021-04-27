@@ -45,4 +45,18 @@ describe Space do
       expect(space_from_db.price_per_night).to eq price_per_night
     end
   end
+
+  describe '.update_availibility' do
+    it 'updates the availibility' do
+      name = '10 makers lane'
+      description = 'this is a 1 bedroom apartment'
+      price_per_night = '$10.00'
+      described_class.create(name: name, description: description, price_per_night: price_per_night)
+
+      described_class.update(name: name)
+
+      result_from_db = DatabaseConnection.query('SELECT availibility FROM space;').first
+      expect(result_from_db['availibility']).to eq 'f'
+    end
+  end
 end

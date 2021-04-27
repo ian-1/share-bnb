@@ -16,4 +16,8 @@ class Space
     Space.new(name: result[0]['name'], description: result[0]['description'],
               price_per_night: result[0]['price_per_night'])
   end
+
+  def self.update(name:)
+    DatabaseConnection.query("UPDATE space SET availibility = false WHERE name = '#{name}';")
+  end
 end
