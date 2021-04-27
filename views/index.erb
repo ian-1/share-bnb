@@ -2,12 +2,30 @@
 <html>
   <head>
     <style>
-
+      h1 {
+        color: grey;
+        font-size: 20px;
+        font-family: Helvetica, sans-serif;
+      }
      body {
+      color: grey;
+      font-family: Helvetica, sans-serif;
       height: 100vh;
       background-color: red; /* For browsers that do not support gradients */
       background-image: linear-gradient(230deg, #99e6ff, #ccffcc);
       }
+      .button {
+        background-color: black;
+        border: none;
+      
+      }
+      .button1 {
+        border-radius: 10%;
+        color: white;
+        font-size: 12px;
+        padding: 8px 15px;
+      }
+      
 
     </style>
   </head>
@@ -17,7 +35,7 @@
     <h1 id= 'grad1'>Welcome to MakersBnB</h1>
 
     <form action='/space/new' method='get'>
-    <input type='submit' name='list_space' value='List a space'>
+    <input type='submit' class='button button1' name='list_space' value='List a space'>
     </form>
     <ul>
       <%=$name%>
