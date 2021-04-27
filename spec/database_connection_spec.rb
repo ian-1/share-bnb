@@ -16,6 +16,7 @@ describe DatabaseConnection do
     end
   end
 
+
   describe '.query' do
     it 'executes a query' do
       connection = described_class.setup('makersbnb_test')

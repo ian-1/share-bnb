@@ -5,7 +5,7 @@ require 'simplecov-console'
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
-require_relative 'setup_test_database'
+# require_relative 'setup_test_database'
 require_relative 'web_helpers'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
@@ -18,9 +18,9 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 Capybara.app = MakersBnb
 
 RSpec.configure do |config|
-  config.before do
-    setup_test_database
-  end
+  # config.before do
+  #   setup_test_database
+  # end
 
   # config.expect_with :rspec do |expectations|
   #   expectations.include_chain_clauses_in_custom_matcher_descriptions = true
