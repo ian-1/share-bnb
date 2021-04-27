@@ -1,11 +1,11 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/almas/Desktop/projects/makers/week_5/makersbnb/app.rb": {
+      "/Users/fizzy/Projects/makersbnb/app.rb": {
         "lines": [
           1,
           1,
-          1,
+          null,
           null,
           1,
           1,
@@ -20,81 +20,61 @@
           null
         ]
       },
-      "/Users/almas/Desktop/projects/makers/week_5/makersbnb/database_connection_setup.rb": {
+      "/Users/fizzy/Projects/makersbnb/spec/database_connection_spec.rb": {
         "lines": [
-          1,
-          null,
-          1,
-          1,
-          null,
-          0,
-          null
-        ]
-      },
-      "/Users/almas/Desktop/projects/makers/week_5/makersbnb/lib/database_connection.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          4,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/almas/Desktop/projects/makers/week_5/makersbnb/spec/database_connection_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
           null,
           null,
           null,
-          1,
-          1,
-          1,
           null,
-          1,
           null,
-          1,
-          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           null
         ]
       },
-      "/Users/almas/Desktop/projects/makers/week_5/makersbnb/spec/features/test_spec.rb": {
+      "/Users/fizzy/Projects/makersbnb/spec/features/homepage_spec.rb": {
         "lines": [
           1,
           1,
           1,
           1,
-          1,
+          null,
+          null
+        ]
+      },
+      "/Users/fizzy/Projects/makersbnb/spec/features/test_spec.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1619454605
+    "timestamp": 1619522006
   }
 }

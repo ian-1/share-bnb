@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require_relative 'database_connection_setup'
+# require_relative 'database_connection_setup'
 
 class MakersBnb < Sinatra::Base
   configure :development do
@@ -8,7 +8,7 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/' do
-    'Hello, world'
+    'Welcome to MakersBnB' 
   end
 
   run! if app_file == $PROGRAM_NAME
