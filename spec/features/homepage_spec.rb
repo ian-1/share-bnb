@@ -1,7 +1,7 @@
 feature 'Homepage' do
   scenario 'A user can see a welcome message' do
     visit '/'
-    expect(page).to have_content 'Welcome to MakersBnB'
+    expect(page).to have_content 'makersbnb'
     click_button 'Become a host'
     expect(current_path).to eq '/space/new'
     fill_in 'name', with: '10 Downing street'
@@ -28,5 +28,18 @@ feature 'Sign-up button' do
     visit '/'
     click_button 'Sign up'
     expect(current_path).to eq '/user/new'
+  end
+end
+
+feature 'Sign in button' do
+  scenario 'A user can sign in' do
+    visit '/'
+    click_button 'Sign in'
+    expect(current_path).to eq '/user/sign_in'
+    fill_in 'email', with: 'bojo10@downingstreet.com'
+    fill_in 'password', with: 'bjohnson'
+    click_button 'Sign in'
+    expect(current_path).to eq '/user/:id'
+    expect(page).to have_content 'Welcome bojo'
   end
 end

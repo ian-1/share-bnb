@@ -8,10 +8,13 @@ class MakersBnb < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  enable :sessions
+  enable :sessions, :_methodoverride
+  set :port, 4561
+
 
   get '/' do
     @result_db = Space.all.last
+    $user_name
     erb :index
   end
 
@@ -27,9 +30,28 @@ class MakersBnb < Sinatra::Base
     redirect '/'
   end
 
-  # get '/user/new' do
-  #
-  # end
+  get '/user/new' do
+    erb :'user/new'
+  end
+
+  post '/user' do
+    $username = params[:user_name]
+    $email = params[:email]
+    $password = params[:password]
+    redirect '/'
+  end
+
+  get '/user/sign_in' do
+    erb :'user/sign_in'
+  end
+
+  patch '/user/:id' do
+    p $username
+    $email = params[:email]
+    redirect '/'
+  end
+
+  
 
   run! if app_file == $PROGRAM_NAME
 end
