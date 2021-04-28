@@ -85,27 +85,30 @@ describe Space do
     end
   end
 
-  xdescribe '.available_list' do
+  describe '.available_list' do
     it 'pulls records of available properties from the database' do
-      name = '1 Availible St'
-      description = 'blah blah'
-      price_per_night = '$10.00'
-      described_class.create(name: name, description: description, price_per_night: price_per_night)
-
       name = '1 Unavailable St'
       description = 'blah blah'
       price_per_night = '$10.00'
       described_class.create(name: name, description: description, price_per_night: price_per_night)
-      result_from_db = DatabaseConnection.query('SELECT * FROM space;')[1]
-      expect(result_from_db['name']).to eq '1 Unavailable St'
-      id = result_from_db['id']
-      described_class.update_availibility(id: id)
 
-      # space_from_db = described_class.all.last
+      name = '1 Available St'
+      description = 'blah blah'
+      price_per_night = '$10.00'
+      described_class.create(name: name, description: description, price_per_night: price_per_night)
+      result = DatabaseConnection.query('SELECT * FROM space;').first
+      expect(result['name']).to eq '1 Unavailable St'
+     
+      space = described_class.new(
+      id: result['id'],
+      name: result['name'],
+      description: result['description'],
+      price_per_night: result['price_per_night'],
+      available: result['availibility'])
 
-      # expect(space_from_db.name).to eq name
-      # expect(space_from_db.description).to eq description
-      # expect(space_from_db.price_per_night).to eq price_per_night
+      space.unavailable
+      list = described_class.available_list
+      expect(list.first.name).to eq '1 Available St'
     end
   end
 end
