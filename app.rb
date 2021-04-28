@@ -26,5 +26,10 @@ class MakersBnb < Sinatra::Base
     Space.create(name: name, description: description, price_per_night: price_per_night)
     redirect '/'
   end
+
+  # get '/user/new' do
+  #
+  # end
+
   run! if app_file == $PROGRAM_NAME
 end

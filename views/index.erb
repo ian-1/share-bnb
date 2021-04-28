@@ -2,8 +2,15 @@
   <h1>Welcome to MakersBnB</h1>
 
   <form action='/space/new' method='get'>
-    <input type='submit' class='button button1' name='list_space' value='List a space'>
+    <input type='submit' class='button button1' name='become_a_host' value='Become a host'>
   </form>
+
+  <br>
+
+  <form action='/user/new' method='get'>
+    <input type='submit' class='button button1' name='sign_up' value='Sign up'>
+  </form>
+
   <ul>
     <% unless @result_db.nil? %>
     <%=@result_db.name%>
