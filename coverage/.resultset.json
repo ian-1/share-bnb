@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/m/Projects/makersbnb/app.rb": {
+      "/Users/ianwalton/projects/challenges/makersbnb/app.rb": {
         "lines": [
           1,
           1,
@@ -35,7 +35,7 @@
           null
         ]
       },
-      "/Users/m/Projects/makersbnb/database_connection_setup.rb": {
+      "/Users/ianwalton/projects/challenges/makersbnb/database_connection_setup.rb": {
         "lines": [
           1,
           null,
@@ -46,7 +46,7 @@
           null
         ]
       },
-      "/Users/m/Projects/makersbnb/lib/database_connection.rb": {
+      "/Users/ianwalton/projects/challenges/makersbnb/lib/database_connection.rb": {
         "lines": [
           1,
           null,
@@ -59,23 +59,30 @@
           null,
           null,
           1,
-          15,
+          16,
           null,
           null,
           null
         ]
       },
-      "/Users/m/Projects/makersbnb/lib/space.rb": {
+      "/Users/ianwalton/projects/challenges/makersbnb/lib/space.rb": {
         "lines": [
           1,
           1,
           null,
           1,
-          4,
-          4,
-          4,
+          5,
+          5,
+          5,
+          5,
+          5,
           null,
           null,
+          1,
+          1,
+          null,
+          null,
+          1,
           1,
           5,
           null,
@@ -86,13 +93,16 @@
           null,
           null,
           null,
-          1,
-          1,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null
         ]
       },
-      "/Users/m/Projects/makersbnb/spec/database_connection_spec.rb": {
+      "/Users/ianwalton/projects/challenges/makersbnb/spec/database_connection_spec.rb": {
         "lines": [
           1,
           null,
@@ -126,7 +136,7 @@
           null
         ]
       },
-      "/Users/m/Projects/makersbnb/spec/features/homepage_spec.rb": {
+      "/Users/ianwalton/projects/challenges/makersbnb/spec/features/homepage_spec.rb": {
         "lines": [
           1,
           1,
@@ -154,7 +164,7 @@
           null
         ]
       },
-      "/Users/m/Projects/makersbnb/spec/features/list_a_space_spec.rb": {
+      "/Users/ianwalton/projects/challenges/makersbnb/spec/features/list_a_space_spec.rb": {
         "lines": [
           1,
           1,
@@ -170,7 +180,7 @@
           null
         ]
       },
-      "/Users/m/Projects/makersbnb/spec/features/test_spec.rb": {
+      "/Users/ianwalton/projects/challenges/makersbnb/spec/features/test_spec.rb": {
         "lines": [
           null,
           null,
@@ -181,7 +191,7 @@
           null
         ]
       },
-      "/Users/m/Projects/makersbnb/spec/space_spec.rb": {
+      "/Users/ianwalton/projects/challenges/makersbnb/spec/space_spec.rb": {
         "lines": [
           1,
           null,
@@ -191,40 +201,17 @@
           1,
           1,
           1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
           1,
           1,
           1,
           null,
           null,
           null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
           null,
           null,
           null,
           1,
           1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
           1,
           1,
           1,
@@ -239,15 +226,87 @@
           1,
           null,
           1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           1,
           1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1619544393
+    "timestamp": 1619615922
   }
 }
