@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-04-28T22:47:36+01:00">2021-04-28T22:47:36+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-04-28T23:12:18+01:00">2021-04-28T23:12:18+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  99.55%
+  99.56%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.87
+         1.96
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>220</b> relevant lines,
-    <span class="green"><b>219</b> lines covered</span> and
+    <b>226</b> relevant lines,
+    <span class="green"><b>225</b> lines covered</span> and
     <span class="red"><b>1</b> lines missed. </span>
     (<span class="green">
-  99.55%
+  99.56%
 </span>
 )
   </div>
@@ -106,22 +106,22 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#0de1e9ce6a0982ae738d6eede6c2482edf1fbcd2" class="src_link" title="lib/space.rb">lib/space.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">72</td>
-            <td class="cell--number">31</td>
-            <td class="cell--number">31</td>
+            <td class="cell--number">57</td>
+            <td class="cell--number">33</td>
+            <td class="cell--number">33</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">5.03</td>
+            <td class="cell--number">5.39</td>
             
           </tr>
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#8779bd07a40032fa86ba61179346adb9ba0722b7" class="src_link" title="lib/user.rb">lib/user.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">34</td>
-            <td class="cell--number">19</td>
-            <td class="cell--number">19</td>
+            <td class="cell--number">41</td>
+            <td class="cell--number">23</td>
+            <td class="cell--number">23</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">2.11</td>
+            <td class="cell--number">2.13</td>
             
           </tr>
         
@@ -887,8 +887,8 @@
     
 
     <div class="t-line-summary">
-      <b>31</b> relevant lines.
-      <span class="green"><b>31</b> lines covered</span> and
+      <b>33</b> relevant lines.
+      <span class="green"><b>33</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -1126,7 +1126,7 @@
 
             
 
-            <code class="ruby">      sql = &quot;INSERT INTO space (#{columns}) VALUES (#{values}) RETURNING id, availibility;&quot;</code>
+            <code class="ruby">      returning = &quot;id, availibility, #{columns}&quot;</code>
           </li>
         </div>
       
@@ -1137,7 +1137,7 @@
 
             
 
-            <code class="ruby">      result = DatabaseConnection.query(sql).first</code>
+            <code class="ruby">      sql = &quot;INSERT INTO space (#{columns}) VALUES (#{values}) RETURNING #{returning};&quot;</code>
           </li>
         </div>
       
@@ -1148,18 +1148,18 @@
 
             
 
-            <code class="ruby">      new(</code>
+            <code class="ruby">      result = DatabaseConnection.query(sql).first</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="24">
-            
-            
-
+          <li class="covered" data-hits="8" data-linenumber="24">
+            <span class="hits">8</span>
             
 
-            <code class="ruby">        id: result[&#39;id&#39;],</code>
+            
+
+            <code class="ruby">      new_from_db_result(result)</code>
           </li>
         </div>
       
@@ -1170,7 +1170,7 @@
 
             
 
-            <code class="ruby">        name: name,</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -1181,40 +1181,40 @@
 
             
 
-            <code class="ruby">        description: description,</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="27">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="27">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">        price_per_night: price_per_night,</code>
+            
+
+            <code class="ruby">    def all</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="28">
-            
-            
-
+          <li class="covered" data-hits="6" data-linenumber="28">
+            <span class="hits">6</span>
             
 
-            <code class="ruby">        available: result[&#39;availibility&#39;]</code>
+            
+
+            <code class="ruby">      result = DatabaseConnection.query(&#39;SELECT * FROM space;&#39;)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="29">
-            
-            
-
+          <li class="covered" data-hits="9" data-linenumber="29">
+            <span class="hits">9</span>
             
 
-            <code class="ruby">      )</code>
+            
+
+            <code class="ruby">      result.map { |row| new_from_db_result(row) }</code>
           </li>
         </div>
       
@@ -1247,13 +1247,13 @@
 
             
 
-            <code class="ruby">    def all</code>
+            <code class="ruby">    def available_list</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="33">
-            <span class="hits">6</span>
+          <li class="covered" data-hits="1" data-linenumber="33">
+            <span class="hits">1</span>
             
 
             
@@ -1263,24 +1263,24 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="34">
-            <span class="hits">6</span>
+          <li class="covered" data-hits="1" data-linenumber="34">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">      result.map do |row|</code>
+            <code class="ruby">      result.filter_map do |row|</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="35">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="2" data-linenumber="35">
+            <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">        Space.new(</code>
+            <code class="ruby">        new_from_db_result(row) if row[&#39;availibility&#39;] == &#39;t&#39;</code>
           </li>
         </div>
       
@@ -1291,7 +1291,7 @@
 
             
 
-            <code class="ruby">          id: row[&#39;id&#39;],</code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
@@ -1302,7 +1302,7 @@
 
             
 
-            <code class="ruby">          name: row[&#39;name&#39;],</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -1313,51 +1313,51 @@
 
             
 
-            <code class="ruby">          description: row[&#39;description&#39;],</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="39">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="39">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">          price_per_night: row[&#39;price_per_night&#39;],</code>
+            
+
+            <code class="ruby">    def find(id:)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="40">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="40">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">          available: row[&#39;available&#39;]</code>
+            
+
+            <code class="ruby">      sql = &quot;SELECT * FROM space WHERE id = &#39;#{id}&#39;;&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="41">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="41">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">        )</code>
+            
+
+            <code class="ruby">      result = DatabaseConnection.query(sql).first</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="42">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="42">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">      end</code>
+            
+
+            <code class="ruby">      new_from_db_result(result)</code>
           </li>
         </div>
       
@@ -1390,155 +1390,12 @@
 
             
 
-            <code class="ruby">    def available_list</code>
+            <code class="ruby">    private</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="46">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      result = DatabaseConnection.query(&#39;SELECT * FROM space;&#39;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="47">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      result.filter_map do |row|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="48">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">        if row[&#39;availibility&#39;] == &#39;t&#39;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="49">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">          Space.new(</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="50">
-            
-            
-
-            
-
-            <code class="ruby">            id: row[&#39;id&#39;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="51">
-            
-            
-
-            
-
-            <code class="ruby">            name: row[&#39;name&#39;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="52">
-            
-            
-
-            
-
-            <code class="ruby">            description: row[&#39;description&#39;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="53">
-            
-            
-
-            
-
-            <code class="ruby">            price_per_night: row[&#39;price_per_night&#39;],</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="54">
-            
-            
-
-            
-
-            <code class="ruby">            available: row[&#39;availibility&#39;]</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="55">
-            
-            
-
-            
-
-            <code class="ruby">          )</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="56">
-            
-            
-
-            
-
-            <code class="ruby">        end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="57">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="58">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="59">
+          <li class="never" data-hits="" data-linenumber="46">
             
             
 
@@ -1549,41 +1406,19 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="60">
+          <li class="covered" data-hits="1" data-linenumber="47">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    def find(id:)</code>
+            <code class="ruby">    def new_from_db_result(result)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="61">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      sql = &quot;SELECT * FROM space WHERE id = &#39;#{id}&#39;;&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="62">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      result = DatabaseConnection.query(sql).first</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="63">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="13" data-linenumber="48">
+            <span class="hits">13</span>
             
 
             
@@ -1593,7 +1428,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="64">
+          <li class="never" data-hits="" data-linenumber="49">
             
             
 
@@ -1604,7 +1439,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="65">
+          <li class="never" data-hits="" data-linenumber="50">
             
             
 
@@ -1615,7 +1450,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="66">
+          <li class="never" data-hits="" data-linenumber="51">
             
             
 
@@ -1626,7 +1461,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="67">
+          <li class="never" data-hits="" data-linenumber="52">
             
             
 
@@ -1637,7 +1472,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="68">
+          <li class="never" data-hits="" data-linenumber="53">
             
             
 
@@ -1648,7 +1483,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="69">
+          <li class="never" data-hits="" data-linenumber="54">
             
             
 
@@ -1659,7 +1494,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="70">
+          <li class="never" data-hits="" data-linenumber="55">
             
             
 
@@ -1670,7 +1505,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="71">
+          <li class="never" data-hits="" data-linenumber="56">
             
             
 
@@ -1681,7 +1516,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="72">
+          <li class="never" data-hits="" data-linenumber="57">
             
             
 
@@ -1710,8 +1545,8 @@
     
 
     <div class="t-line-summary">
-      <b>19</b> relevant lines.
-      <span class="green"><b>19</b> lines covered</span> and
+      <b>23</b> relevant lines.
+      <span class="green"><b>23</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -1927,7 +1762,7 @@
 
             
 
-            <code class="ruby">      sql = &quot;INSERT INTO app_user (#{columns}) VALUES(#{values}) RETURNING id;&quot;</code>
+            <code class="ruby">      returning = &#39;id, name, email&#39;</code>
           </li>
         </div>
       
@@ -1938,7 +1773,7 @@
 
             
 
-            <code class="ruby">      result = DatabaseConnection.query(sql).first</code>
+            <code class="ruby">      sql = &quot;INSERT INTO app_user (#{columns}) VALUES(#{values}) RETURNING #{returning};&quot;</code>
           </li>
         </div>
       
@@ -1949,18 +1784,18 @@
 
             
 
-            <code class="ruby">      new(id: result[&#39;id&#39;], name: name, email: email)</code>
+            <code class="ruby">      result = DatabaseConnection.query(sql).first</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="22">
-            
-            
-
+          <li class="covered" data-hits="3" data-linenumber="22">
+            <span class="hits">3</span>
             
 
-            <code class="ruby">    end</code>
+            
+
+            <code class="ruby">      new_from_db_result(result)</code>
           </li>
         </div>
       
@@ -1971,18 +1806,18 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="24">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="24">
+            
             
 
             
 
-            <code class="ruby">    def find(id:)</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -1993,7 +1828,7 @@
 
             
 
-            <code class="ruby">      sql = &quot;SELECT * FROM app_user WHERE id = &#39;#{id}&#39;;&quot;</code>
+            <code class="ruby">    def find(id:)</code>
           </li>
         </div>
       
@@ -2004,7 +1839,7 @@
 
             
 
-            <code class="ruby">      result = DatabaseConnection.query(sql).first</code>
+            <code class="ruby">      sql = &quot;SELECT * FROM app_user WHERE id = &#39;#{id}&#39;;&quot;</code>
           </li>
         </div>
       
@@ -2015,18 +1850,18 @@
 
             
 
-            <code class="ruby">      User.new(</code>
+            <code class="ruby">      result = DatabaseConnection.query(sql).first</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="28">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="28">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">        id: result[&#39;id&#39;],</code>
+            
+
+            <code class="ruby">      new_from_db_result(result)</code>
           </li>
         </div>
       
@@ -2037,7 +1872,7 @@
 
             
 
-            <code class="ruby">        name: result[&#39;name&#39;],</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -2048,18 +1883,18 @@
 
             
 
-            <code class="ruby">        email: result[&#39;email&#39;]</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="31">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="31">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">      )</code>
+            
+
+            <code class="ruby">    private</code>
           </li>
         </div>
       
@@ -2070,12 +1905,89 @@
 
             
 
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="33">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    def new_from_db_result(result)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="34">
+            <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">      User.new(</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="35">
+            
+            
+
+            
+
+            <code class="ruby">        id: result[&#39;id&#39;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="36">
+            
+            
+
+            
+
+            <code class="ruby">        name: result[&#39;name&#39;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="37">
+            
+            
+
+            
+
+            <code class="ruby">        email: result[&#39;email&#39;]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="38">
+            
+            
+
+            
+
+            <code class="ruby">      )</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="39">
+            
+            
+
+            
+
             <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="33">
+          <li class="never" data-hits="" data-linenumber="40">
             
             
 
@@ -2086,7 +1998,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="34">
+          <li class="never" data-hits="" data-linenumber="41">
             
             
 

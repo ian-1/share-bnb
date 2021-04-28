@@ -18,48 +18,33 @@ class Space
     def create(name:, description:, price_per_night:)
       columns = 'name, description, price_per_night'
       values = "'#{name}', '#{description}', '#{price_per_night}'"
-      sql = "INSERT INTO space (#{columns}) VALUES (#{values}) RETURNING id, availibility;"
+      returning = "id, availibility, #{columns}"
+      sql = "INSERT INTO space (#{columns}) VALUES (#{values}) RETURNING #{returning};"
       result = DatabaseConnection.query(sql).first
-      new(
-        id: result['id'],
-        name: name,
-        description: description,
-        price_per_night: price_per_night,
-        available: result['availibility']
-      )
+      new_from_db_result(result)
     end
 
     def all
       result = DatabaseConnection.query('SELECT * FROM space;')
-      result.map do |row|
-        Space.new(
-          id: row['id'],
-          name: row['name'],
-          description: row['description'],
-          price_per_night: row['price_per_night'],
-          available: row['available']
-        )
-      end
+      result.map { |row| new_from_db_result(row) }
     end
 
     def available_list
       result = DatabaseConnection.query('SELECT * FROM space;')
       result.filter_map do |row|
-        if row['availibility'] == 't'
-          Space.new(
-            id: row['id'],
-            name: row['name'],
-            description: row['description'],
-            price_per_night: row['price_per_night'],
-            available: row['availibility']
-          )
-        end
+        new_from_db_result(row) if row['availibility'] == 't'
       end
     end
 
     def find(id:)
       sql = "SELECT * FROM space WHERE id = '#{id}';"
       result = DatabaseConnection.query(sql).first
+      new_from_db_result(result)
+    end
+
+    private
+
+    def new_from_db_result(result)
       Space.new(
         id: result['id'],
         name: result['name'],

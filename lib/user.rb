@@ -16,14 +16,21 @@ class User
 
       columns = 'name, email, password'
       values = "'#{name}','#{email}', '#{encrypted_password}'"
-      sql = "INSERT INTO app_user (#{columns}) VALUES(#{values}) RETURNING id;"
+      returning = 'id, name, email'
+      sql = "INSERT INTO app_user (#{columns}) VALUES(#{values}) RETURNING #{returning};"
       result = DatabaseConnection.query(sql).first
-      new(id: result['id'], name: name, email: email)
+      new_from_db_result(result)
     end
 
     def find(id:)
       sql = "SELECT * FROM app_user WHERE id = '#{id}';"
       result = DatabaseConnection.query(sql).first
+      new_from_db_result(result)
+    end
+
+    private
+
+    def new_from_db_result(result)
       User.new(
         id: result['id'],
         name: result['name'],
