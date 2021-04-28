@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/ionutmintar/Projects/makersbnb/app.rb": {
+      "/Users/ianwalton/projects/challenges/makersbnb/app.rb": {
         "lines": [
           1,
           1,
@@ -35,7 +35,7 @@
           null
         ]
       },
-      "/Users/ionutmintar/Projects/makersbnb/database_connection_setup.rb": {
+      "/Users/ianwalton/projects/challenges/makersbnb/database_connection_setup.rb": {
         "lines": [
           1,
           null,
@@ -46,7 +46,7 @@
           null
         ]
       },
-      "/Users/ionutmintar/Projects/makersbnb/lib/database_connection.rb": {
+      "/Users/ianwalton/projects/challenges/makersbnb/lib/database_connection.rb": {
         "lines": [
           1,
           null,
@@ -65,17 +65,17 @@
           null
         ]
       },
-      "/Users/ionutmintar/Projects/makersbnb/lib/space.rb": {
+      "/Users/ianwalton/projects/challenges/makersbnb/lib/space.rb": {
         "lines": [
           1,
           1,
           null,
           1,
-          8,
-          8,
-          8,
-          8,
-          8,
+          7,
+          7,
+          7,
+          7,
+          7,
           null,
           null,
           1,
@@ -103,10 +103,7 @@
           1,
           1,
           2,
-          null,
-          2,
-          null,
-          null,
+          1,
           null,
           null,
           null,
@@ -120,7 +117,7 @@
           null
         ]
       },
-      "/Users/ionutmintar/Projects/makersbnb/spec/database_connection_spec.rb": {
+      "/Users/ianwalton/projects/challenges/makersbnb/spec/database_connection_spec.rb": {
         "lines": [
           1,
           null,
@@ -154,7 +151,7 @@
           null
         ]
       },
-      "/Users/ionutmintar/Projects/makersbnb/spec/features/homepage_spec.rb": {
+      "/Users/ianwalton/projects/challenges/makersbnb/spec/features/homepage_spec.rb": {
         "lines": [
           1,
           1,
@@ -182,7 +179,7 @@
           null
         ]
       },
-      "/Users/ionutmintar/Projects/makersbnb/spec/features/list_a_space_spec.rb": {
+      "/Users/ianwalton/projects/challenges/makersbnb/spec/features/list_a_space_spec.rb": {
         "lines": [
           1,
           1,
@@ -198,7 +195,7 @@
           null
         ]
       },
-      "/Users/ionutmintar/Projects/makersbnb/spec/features/test_spec.rb": {
+      "/Users/ianwalton/projects/challenges/makersbnb/spec/features/test_spec.rb": {
         "lines": [
           null,
           null,
@@ -209,7 +206,7 @@
           null
         ]
       },
-      "/Users/ionutmintar/Projects/makersbnb/spec/space_spec.rb": {
+      "/Users/ianwalton/projects/challenges/makersbnb/spec/space_spec.rb": {
         "lines": [
           1,
           null,
@@ -308,18 +305,18 @@
           1,
           1,
           1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
           null,
           null,
           null,
           null,
           null,
           1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
           1,
           1,
           null,
@@ -328,6 +325,6 @@
         ]
       }
     },
-    "timestamp": 1619622046
+    "timestamp": 1619623553
   }
 }

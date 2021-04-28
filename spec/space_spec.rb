@@ -92,21 +92,21 @@ describe Space do
       price_per_night = '$10.00'
       described_class.create(name: name, description: description, price_per_night: price_per_night)
 
-      name = '1 Available St'
-      description = 'blah blah'
-      price_per_night = '$10.00'
-      described_class.create(name: name, description: description, price_per_night: price_per_night)
       result = DatabaseConnection.query('SELECT * FROM space;').first
       expect(result['name']).to eq '1 Unavailable St'
-     
       space = described_class.new(
       id: result['id'],
       name: result['name'],
       description: result['description'],
       price_per_night: result['price_per_night'],
       available: result['availibility'])
-
       space.unavailable
+
+      name = '1 Available St'
+      description = 'blah blah'
+      price_per_night = '$10.00'
+      described_class.create(name: name, description: description, price_per_night: price_per_night)
+      
       list = described_class.available_list
       expect(list.first.name).to eq '1 Available St'
     end

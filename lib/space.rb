@@ -32,20 +32,17 @@ class Space
 
     def available_list
       result = DatabaseConnection.query('SELECT * FROM space;')
-      result.map do |row|
-        p row['availibility']
-        #if row['availibility'] == "t"
+      result.filter_map do |row|
+        if row['availibility'] == 't'
           Space.new(
-          id: row['id'],
-          name: row['name'],
-          description: row['description'],
-          price_per_night: row['price_per_night'],
-          available: row['availibility']
+            id: row['id'],
+            name: row['name'],
+            description: row['description'],
+            price_per_night: row['price_per_night'],
+            available: row['availibility']
           )
-        #end
+        end
       end
     end
   end
-
-
 end
