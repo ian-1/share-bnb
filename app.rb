@@ -61,7 +61,7 @@ class MakersBnb < Sinatra::Base
   patch '/space/:id' do
     id = params[:id]
     space = Space.find(id: id)
-    space.unavailable
+    space.unavailable unless session[:user_id].nil?
     redirect '/'
   end
  

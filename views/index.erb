@@ -9,8 +9,10 @@
 <body>
   <h1>makersbnb</h1>
 
-  <% if !@user.nil? %>
-    <h3>Welcome <%=@user.name%></h3>
+  <% if @user.nil? %>
+      <h3>Please sign in/sign up to book a property</h3>
+    <% else %>
+      <h3>Welcome <%=@user.name%></h3>
   <%end%>
 
   <form action='/space/new' method='get'>
