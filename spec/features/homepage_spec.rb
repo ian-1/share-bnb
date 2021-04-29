@@ -33,16 +33,3 @@ feature 'Sign-up button' do
     expect(current_path).to eq '/user/new'
   end
 end
-
-xfeature 'Sign in button' do
-  scenario 'A user can sign in' do
-    visit '/'
-    click_button 'Sign in'
-    expect(current_path).to eq '/user/sign_in'
-    fill_in 'email', with: 'bojo10@downingstreet.com'
-    fill_in 'password', with: 'bjohnson'
-    click_button 'Sign in'
-    expect(current_path).to eq '/user/:id'
-    expect(page).to have_content 'Welcome bojo'
-  end
-end

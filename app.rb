@@ -47,6 +47,11 @@ class MakersBnb < Sinatra::Base
     erb :'user/sign_in'
   end
 
+  post '/user/sign_out' do
+    session[:user_id] = nil
+    redirect '/'
+  end
+
   patch '/space/:id' do
     id = params[:id]
     space = Space.find(id: id)

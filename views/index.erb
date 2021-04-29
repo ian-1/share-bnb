@@ -27,6 +27,11 @@
     <input type='submit' class='button button3' name='sign_in' value='Sign in'>
   </form>
 
+  <form action='/user/sign_out' method='post'>
+    <input type='submit' class='button button5' name='sign_out' value='Sign out'>
+  </form>
+
+
   <ul>
     <% unless @result_db.nil? %>
       <% @result_db.each do |space| %>
