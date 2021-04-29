@@ -1,6 +1,7 @@
 feature 'Homepage' do
   scenario 'A user can see a welcome message' do
     visit '/'
+
     expect(page).to have_content 'makersbnb'
     click_button 'Become a host'
     expect(current_path).to eq '/space/new'
@@ -9,6 +10,7 @@ feature 'Homepage' do
     fill_in 'price_per_night', with: '100000'
     click_button 'Host'
     expect(current_path).to eq '/'
+
     expect(page).to have_content '10 Downing street'
     expect(page).to have_content 'Lovely gaff'
     expect(page).to have_content '$100,000.00 per night'
@@ -18,6 +20,7 @@ end
 feature 'Become a host button' do
   scenario 'A user can become a host' do
     visit '/'
+
     click_button 'Become a host'
     expect(current_path).to eq '/space/new'
   end

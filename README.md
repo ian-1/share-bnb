@@ -12,7 +12,4 @@ Instructions
 
 1. First create a new database: CREATE DATABASE makersbnb;
 1. Create a test database: CREATE DATABASE makersbnb_test;
-1. Create this table in both databases: CREATE TABLE space(id SERIAL PRIMARY KEY, name VARCHAR(300), description VARCHAR(500), price_per_night MONEY, availibility BOOLEAN DEFAULT TRUE);
-1. 
-1. 
-1. 
+1. Create the tables listed in db/migrations; 

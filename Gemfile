@@ -12,6 +12,7 @@ group :test do
 end
 
 group :development do
+  gem 'bcrypt'
   gem 'sinatra'
   gem 'sinatra-contrib'
   gem 'sinatra-flash'
