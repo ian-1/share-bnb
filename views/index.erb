@@ -34,6 +34,10 @@
           <%=space.name%>
           <%=space.description%>
           <%=space.price_per_night%> per night
+          <form action="/space/<%= space.id %>" method='post'>
+            <input type='hidden' name='_method' value='PATCH'>
+            <input type='submit' name='Book' value='Book'>
+          </form>
         </li>
       <% end %>
     <% end %>

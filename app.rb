@@ -8,7 +8,7 @@ class MakersBnb < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  enable :sessions, :_methodoverride
+  enable :sessions, :method_override
   set :port, 4561
 
 
@@ -46,11 +46,16 @@ class MakersBnb < Sinatra::Base
   end
 
   patch '/user/:id' do
-    p $username
     $email = params[:email]
     redirect '/'
   end
 
+  patch '/space/:id' do
+    @id = params[:id]
+    space = Space.find(id: @id)
+    space.unavailable
+    redirect '/'
+  end
   
 
   run! if app_file == $PROGRAM_NAME
