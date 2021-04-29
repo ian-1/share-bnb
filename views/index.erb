@@ -1,5 +1,17 @@
+<head>
+  <style>
+    background-colour: black;
+
+
+  </style>
+</head>
+
 <body>
-  <h1>Welcome to MakersBnB</h1>
+  <h1>makersbnb</h1>
+
+  <% if !$username.nil? %>
+    <h3>Welcome <%=$username%></h3>
+  <%end%>
 
   <form action='/space/new' method='get'>
     <input type='submit' class='button button1' name='become_a_host' value='Become a host'>
@@ -8,7 +20,11 @@
   <br>
 
   <form action='/user/new' method='get'>
-    <input type='submit' class='button button1' name='sign_up' value='Sign up'>
+    <input type='submit' class='button button2' name='sign_up' value='Sign up'>
+  </form>
+
+  <form action='/user/sign_in' method='get'>
+    <input type='submit' class='button button3' name='sign_in' value='Sign in'>
   </form>
 
   <ul>

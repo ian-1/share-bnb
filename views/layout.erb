@@ -2,28 +2,83 @@
 <html>
   <head>
     <style>
+
+      img {width: 90%; padding: 20px; display: inline-block; justify-content: space-between;}
+
       h1 {
-      color: grey;
+      color: black;
       font-size: 20px;
       font-family: Helvetica, sans-serif;
       }
       body {
-      color: grey;
+      color: white;
       font-family: Helvetica, sans-serif;
       height: 100vh;
-      background-color: red; /* For browsers that do not support gradients */
-      background-image: linear-gradient(230deg, #99e6ff, #ccffcc);
+      background-color: white; /* For browsers that do not support gradients */
+      background-image: url("https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?cs=srgb&dl=pexels-johannes-plenio-1103970.jpg&fm=jpg") ;
+      background-size: cover;
+
       }
       .button {
-        background-color: black;
+        background-color: transparent;
         border: none;
+        outline: none;
+        transition-duration: 1s;
+        text-align:center;
       }
       .button1 {
         border-radius: 10%;
         color: white;
         font-size: 12px;
         padding: 8px 15px;
+        position:absolute; top:20px; right:500px;
       }
+
+      .button1:hover {
+        background-color: black;
+        
+      }
+
+      .button2 {
+        border-radius: 10%;
+        color: white;
+        font-size: 12px;
+        padding: 8px 15px;
+        position:absolute; top:20px; right:200px;
+      }
+
+      .button2:hover {
+        background-color: black;
+        
+      }
+
+      .button3 {
+        border-radius: 10%;
+        color: white;
+        font-size: 12px;
+        padding: 8px 15px;
+        position:absolute; top:20px; right:300px;
+      }
+
+      .button3:hover {
+        background-color: black;
+        
+      }
+
+
+      .button4 {
+        border-radius: 10%;
+        color: white;
+        font-size: 12px;
+        padding: 8px 15px;
+      }
+
+      .button4:hover {
+        background-color: black;
+        
+      }
+
+    
     </style>
   </head>
 <%= yield %>
