@@ -28,6 +28,11 @@ class User
       new_from_db_result(result)
     end
 
+    def authenticate(email:, password:)
+      result =  DatabaseConnection.query("SELECT * FROM app_user WHERE email = '#{email}';")
+      User.new(id: result[0]['id'], name: result[0]['name'], email: result[0]['email'])
+    end
+
     private
 
     def new_from_db_result(result)
