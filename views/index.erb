@@ -29,9 +29,13 @@
 
   <ul>
     <% unless @result_db.nil? %>
-    <%=@result_db.name%>
-    <%=@result_db.description%>
-    <%=@result_db.price_per_night%> per night
+      <% @result_db.each do |space| %>
+        <li>
+          <%=space.name%>
+          <%=space.description%>
+          <%=space.price_per_night%> per night
+        </li>
+      <% end %>
     <% end %>
   </ul>
 </body>

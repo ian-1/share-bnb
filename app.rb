@@ -13,7 +13,7 @@ class MakersBnb < Sinatra::Base
 
 
   get '/' do
-    @result_db = Space.all.last
+    @result_db = Space.available_list
     $user_name
     erb :index
   end
