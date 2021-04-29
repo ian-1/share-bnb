@@ -47,6 +47,12 @@ class MakersBnb < Sinatra::Base
     erb :'user/sign_in'
   end
 
+  patch '/user/:id' do
+    user = User.create(name: 'bojo', email: '', password: '')
+    session[:user_id] = user.id
+    redirect '/'
+  end
+
   post '/user/sign_out' do
     session[:user_id] = nil
     redirect '/'
