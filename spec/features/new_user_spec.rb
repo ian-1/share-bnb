@@ -8,5 +8,7 @@ feature 'Sign up' do
     fill_in 'password', with: 'bjohnson'
     click_button 'Sign up'
     expect(current_path).to eq '/'
+    expect(page).to have_content 'Welcome bojo'
+    expect(current_path).to eq '/'
   end
 end
