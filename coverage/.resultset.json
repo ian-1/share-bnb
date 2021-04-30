@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/fizzy/Projects/makersbnb/app.rb": {
+      "/Users/almas/Desktop/projects/makers/week_5/makersbnb/app.rb": {
         "lines": [
           1,
           1,
@@ -84,7 +84,7 @@
           null
         ]
       },
-      "/Users/fizzy/Projects/makersbnb/database_connection_setup.rb": {
+      "/Users/almas/Desktop/projects/makers/week_5/makersbnb/database_connection_setup.rb": {
         "lines": [
           1,
           null,
@@ -95,7 +95,7 @@
           null
         ]
       },
-      "/Users/fizzy/Projects/makersbnb/lib/database_connection.rb": {
+      "/Users/almas/Desktop/projects/makers/week_5/makersbnb/lib/database_connection.rb": {
         "lines": [
           1,
           null,
@@ -114,7 +114,7 @@
           null
         ]
       },
-      "/Users/fizzy/Projects/makersbnb/lib/space.rb": {
+      "/Users/almas/Desktop/projects/makers/week_5/makersbnb/lib/space.rb": {
         "lines": [
           1,
           1,
@@ -177,7 +177,7 @@
           null
         ]
       },
-      "/Users/fizzy/Projects/makersbnb/lib/user.rb": {
+      "/Users/almas/Desktop/projects/makers/week_5/makersbnb/lib/user.rb": {
         "lines": [
           1,
           null,
@@ -238,7 +238,7 @@
           null
         ]
       },
-      "/Users/fizzy/Projects/makersbnb/spec/booking_spec.rb": {
+      "/Users/almas/Desktop/projects/makers/week_5/makersbnb/spec/booking_spec.rb": {
         "lines": [
           1,
           1,
@@ -266,7 +266,7 @@
           null
         ]
       },
-      "/Users/fizzy/Projects/makersbnb/lib/booking.rb": {
+      "/Users/almas/Desktop/projects/makers/week_5/makersbnb/lib/booking.rb": {
         "lines": [
           1,
           1,
@@ -291,7 +291,7 @@
           null
         ]
       },
-      "/Users/fizzy/Projects/makersbnb/spec/database_connection_spec.rb": {
+      "/Users/almas/Desktop/projects/makers/week_5/makersbnb/spec/database_connection_spec.rb": {
         "lines": [
           1,
           null,
@@ -324,7 +324,7 @@
           null
         ]
       },
-      "/Users/fizzy/Projects/makersbnb/spec/features/book_space_spec.rb": {
+      "/Users/almas/Desktop/projects/makers/week_5/makersbnb/spec/features/book_space_spec.rb": {
         "lines": [
           1,
           1,
@@ -346,7 +346,7 @@
           null
         ]
       },
-      "/Users/fizzy/Projects/makersbnb/spec/features/homepage_spec.rb": {
+      "/Users/almas/Desktop/projects/makers/week_5/makersbnb/spec/features/homepage_spec.rb": {
         "lines": [
           1,
           1,
@@ -376,7 +376,7 @@
           null
         ]
       },
-      "/Users/fizzy/Projects/makersbnb/spec/features/list_a_space_spec.rb": {
+      "/Users/almas/Desktop/projects/makers/week_5/makersbnb/spec/features/list_a_space_spec.rb": {
         "lines": [
           1,
           1,
@@ -408,7 +408,7 @@
           null
         ]
       },
-      "/Users/fizzy/Projects/makersbnb/spec/features/new_user_spec.rb": {
+      "/Users/almas/Desktop/projects/makers/week_5/makersbnb/spec/features/new_user_spec.rb": {
         "lines": [
           1,
           1,
@@ -426,7 +426,7 @@
           null
         ]
       },
-      "/Users/fizzy/Projects/makersbnb/spec/features/sign_in_spec.rb": {
+      "/Users/almas/Desktop/projects/makers/week_5/makersbnb/spec/features/sign_in_spec.rb": {
         "lines": [
           1,
           1,
@@ -453,7 +453,7 @@
           null
         ]
       },
-      "/Users/fizzy/Projects/makersbnb/spec/features/sign_out_spec.rb": {
+      "/Users/almas/Desktop/projects/makers/week_5/makersbnb/spec/features/sign_out_spec.rb": {
         "lines": [
           1,
           1,
@@ -474,7 +474,7 @@
           null
         ]
       },
-      "/Users/fizzy/Projects/makersbnb/spec/features/test_spec.rb": {
+      "/Users/almas/Desktop/projects/makers/week_5/makersbnb/spec/features/test_spec.rb": {
         "lines": [
           null,
           null,
@@ -485,7 +485,7 @@
           null
         ]
       },
-      "/Users/fizzy/Projects/makersbnb/spec/space_spec.rb": {
+      "/Users/almas/Desktop/projects/makers/week_5/makersbnb/spec/space_spec.rb": {
         "lines": [
           1,
           1,
@@ -630,7 +630,7 @@
           null
         ]
       },
-      "/Users/fizzy/Projects/makersbnb/spec/user_spec.rb": {
+      "/Users/almas/Desktop/projects/makers/week_5/makersbnb/spec/user_spec.rb": {
         "lines": [
           1,
           null,
@@ -691,6 +691,6 @@
         ]
       }
     },
-    "timestamp": 1619787456
+    "timestamp": 1619789597
   }
 }

@@ -69,6 +69,7 @@ class MakersBnb < Sinatra::Base
   end
 
   patch '/space/:id' do
+    flash[:not_signed_in] = 'Please sign in or sign up before booking' if session[:user_id].nil?
     id = params[:id]
     space = Space.find(id: id)
     space.unavailable unless session[:user_id].nil?
