@@ -1,0 +1,1 @@
+ALTER TABLE space ADD user_id INTEGER REFERENCES app_user (id);

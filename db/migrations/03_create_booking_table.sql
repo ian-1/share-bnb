@@ -1,0 +1,1 @@
+CREATE TABLE booking(id SERIAL PRIMARY KEY, start_date DATE, end_date DATE, space_id INTEGER REFERENCES space (id), user_id INTEGER REFERENCES app_user (id));
