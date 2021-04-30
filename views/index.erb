@@ -42,6 +42,11 @@
         <br>
         <form action="/space/<%= space.id %>" method='post'>
           <input type='hidden' name='_method' value='PATCH'>
+          
+          <label for="start_date">Start date:</label>
+          <input type="date" id="start_date" name="start_date" required>
+          <label for="end_date">End date:</label>
+          <input type="date" id="end_date" name="end_date" required>
           <input type='submit' name='Book' value='Book' class='button button6'>
         </form>
         <br>
