@@ -9,7 +9,7 @@ class MakersBnb < Sinatra::Base
   end
 
   enable :sessions, :_methodoverride
-  set :port, 4561
+  set :port, 4562
 
 
   get '/' do
