@@ -25,10 +25,11 @@
     <input type='submit' class='button button2' name='sign_up' value='Sign up'>
   </form>
 
-  <form action='/user/sign_in' method='get'>
-    <input type='submit' class='button button3' name='sign_in' value='Sign in'>
-  </form>
-
+  <% unless @user %>  
+    <form action='/user/sign_in' method='get'>
+      <input type='submit' class='button button3' name='sign_in' value='Sign in'>
+    </form>
+  <% end %>
   <form action='/user/sign_out' method='post'>
     <input type='submit' class='button button5' name='sign_out' value='Sign out'>
   </form>
@@ -37,16 +38,18 @@
   <ul>
     <% unless @result_db.nil? %>
       <% @result_db.each do |space| %>
-        <li>
-          <%=space.name%>
-          <%=space.description%>
-          <%=space.price_per_night%> per night
-          <form action="/space/<%= space.id %>" method='post'>
-            <input type='hidden' name='_method' value='PATCH'>
-            <input type='submit' name='Book' value='Book'>
-          </form>
-        </li>
+        <%=space.name.upcase%><br>
+        <%=space.description.capitalize%><br>
+        <%=space.price_per_night%> per night<br>
+        <br>
+        <form action="/space/<%= space.id %>" method='post'>
+          <input type='hidden' name='_method' value='PATCH'>
+          <input type='submit' name='Book' value='Book' class='button button6'>
+        </form>
+        <br>
+        <br>
       <% end %>
     <% end %>
   </ul>
 </body>
+
