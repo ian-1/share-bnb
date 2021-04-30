@@ -24,10 +24,10 @@ class MakersBnb < Sinatra::Base
 
   post '/space' do
     unless session[:user_id].nil?
-      p name = params[:name]
-      p description = params[:description]
-      p price_per_night = params[:price_per_night]
-      p user_id = session[:user_id] 
+      name = params[:name]
+      description = params[:description]
+      price_per_night = params[:price_per_night]
+      user_id = session[:user_id] 
       Space.create(name: name, description: description, price_per_night: price_per_night, user_id: user_id )
     end
     redirect '/'
@@ -51,9 +51,13 @@ class MakersBnb < Sinatra::Base
   end
 
   patch '/user/:id' do
-    user = User.create(name: 'bojo', email: '', password: '')
-    session[:user_id] = user.id
-    redirect '/'
+    user = User.authenticate(email: params[:email], password: params[:password])
+    if user.nil?
+      
+    else
+      session[:user_id] = user.id
+      redirect '/'
+    end
   end
 
   post '/user/sign_out' do

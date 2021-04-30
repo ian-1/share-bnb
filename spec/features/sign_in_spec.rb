@@ -8,16 +8,16 @@ feature 'Sign in' do
     fill_in 'password', with: 'bjohnson'
     click_button 'Sign up'
     expect(current_path).to eq '/'
-    expect(page).to have_content 'Welcome bojo'
+    expect(page).to have_content 'Welcome BOJO'
     click_button 'Sign out'
     expect(current_path).to eq '/'
-    expect(page).not_to have_content 'Welcome bojo'
+    expect(page).not_to have_content 'Welcome BOJO'
 
     click_button 'Sign in'
     fill_in 'email', with: 'bojo10@downingstreet.com'
     fill_in 'password', with: 'bjohnson'
     click_button 'Sign in'
     expect(current_path).to eq '/'
-    expect(page).to have_content 'Welcome bojo'
+    expect(page).to have_content 'Welcome BOJO'
   end
 end
