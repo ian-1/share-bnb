@@ -9,8 +9,10 @@
 <body>
   <h1>makersbnb</h1>
 
-  <% if !$username.nil? %>
-    <h3>Welcome <%=$username%></h3>
+  <% if @user.nil? %>
+      <h3>Please sign in/sign up to book a property</h3>
+    <% else %>
+      <h3>Welcome <%=@user.name%></h3>
   <%end%>
 
   <form action='/space/new' method='get'>
@@ -27,11 +29,24 @@
     <input type='submit' class='button button3' name='sign_in' value='Sign in'>
   </form>
 
+  <form action='/user/sign_out' method='post'>
+    <input type='submit' class='button button5' name='sign_out' value='Sign out'>
+  </form>
+
+
   <ul>
     <% unless @result_db.nil? %>
-    <%=@result_db.name%>
-    <%=@result_db.description%>
-    <%=@result_db.price_per_night%> per night
+      <% @result_db.each do |space| %>
+        <li>
+          <%=space.name%>
+          <%=space.description%>
+          <%=space.price_per_night%> per night
+          <form action="/space/<%= space.id %>" method='post'>
+            <input type='hidden' name='_method' value='PATCH'>
+            <input type='submit' name='Book' value='Book'>
+          </form>
+        </li>
+      <% end %>
     <% end %>
   </ul>
 </body>
