@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require 'sinatra/flash'
 require_relative 'database_connection_setup'
 require_relative 'lib/space'
 require_relative 'lib/user'
@@ -7,6 +8,7 @@ require_relative 'lib/user'
 class MakersBnb < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
+    register Sinatra::Flash
   end
 
   enable :sessions, :method_override
@@ -52,11 +54,12 @@ class MakersBnb < Sinatra::Base
 
   patch '/user/:id' do
     user = User.authenticate(email: params[:email], password: params[:password])
-    if user.nil?
-      
-    else
+    if user
       session[:user_id] = user.id
       redirect '/'
+    else
+      flash[:wrong_details] = 'Please check your email or password.'
+      redirect '/user/sign_in'
     end
   end
 
