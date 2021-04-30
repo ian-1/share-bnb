@@ -4,8 +4,8 @@ require 'space'
 
 describe Booking do
   let(:user) {User.create(name: "John" , email: "jman@user.com", password: "password123")}
-  let(:space) {Space.create(name: "10 Makers Lane", description: "Nice house", price_per_night: "10")}
-  let(:booking) {Booking.create(start_date: "1/05/2021", end_date: "02/05/2021", user_id: "#{user.id}", space_id: space.id)}
+  let(:space) {Space.create(name: "10 Makers Lane", description: "Nice house", price_per_night: "10", user_id: user.id) }
+  let(:booking) { Booking.create(start_date: "1/05/2021", end_date: "02/05/2021", user_id: "#{user.id}", space_id: space.id) }
 
   describe '.create' do
     it 'creates a new booking' do
