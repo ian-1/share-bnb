@@ -1,12 +1,13 @@
 class Space
-  attr_reader :id, :name, :description, :price_per_night, :available
+  attr_reader :id, :name, :description, :price_per_night, :available, :user_id
 
-  def initialize(id:, name:, description:, price_per_night:, available:)
+  def initialize(id:, name:, description:, price_per_night:, available:, user_id:)
     @id = id
     @name = name
     @description = description
     @price_per_night = price_per_night
     @available = available
+    @user_id = user_id
   end
 
   def unavailable
@@ -15,9 +16,9 @@ class Space
   end
 
   class << self
-    def create(name:, description:, price_per_night:)
-      columns = 'name, description, price_per_night'
-      values = "'#{name}', '#{description}', '#{price_per_night}'"
+    def create(name:, description:, price_per_night:, user_id:)
+      columns = 'name, description, price_per_night, user_id'
+      values = "'#{name}', '#{description}', '#{price_per_night}', '#{user_id}'"
       returning = "id, availibility, #{columns}"
       sql = "INSERT INTO space (#{columns}) VALUES (#{values}) RETURNING #{returning};"
       result = DatabaseConnection.query(sql).first
@@ -50,7 +51,8 @@ class Space
         name: result['name'],
         description: result['description'],
         price_per_night: result['price_per_night'],
-        available: result['availibility']
+        available: result['availibility'],
+        user_id: result['user_id']
       )
     end
   end
