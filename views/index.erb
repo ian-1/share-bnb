@@ -7,10 +7,10 @@
 </head>
 
 <body>
-  <h1>makersbnb</h1>
+  
 
-  <% if !$username.nil? %>
-    <h3>Welcome <%=$username%></h3>
+  <% unless @user.nil? %>
+    <h3>Welcome <%=@user.name.upcase%></h3>
   <%end%>
 
   <form action='/space/new' method='get'>
@@ -23,15 +23,36 @@
     <input type='submit' class='button button2' name='sign_up' value='Sign up'>
   </form>
 
-  <form action='/user/sign_in' method='get'>
-    <input type='submit' class='button button3' name='sign_in' value='Sign in'>
+  <% unless @user %>  
+    <form action='/user/sign_in' method='get'>
+      <input type='submit' class='button button3' name='sign_in' value='Sign in'>
+    </form>
+  <% end %>
+  <form action='/user/sign_out' method='post'>
+    <input type='submit' class='button button5' name='sign_out' value='Sign out'>
   </form>
+
 
   <ul>
     <% unless @result_db.nil? %>
-    <%=@result_db.name%>
-    <%=@result_db.description%>
-    <%=@result_db.price_per_night%> per night
+      <% @result_db.each do |space| %>
+        <%=space.name.upcase%><br>
+        <%=space.description.capitalize%><br>
+        <%=space.price_per_night%> per night<br>
+        <br>
+        <form action="/space/<%= space.id %>" method='post'>
+          <input type='hidden' name='_method' value='PATCH'>
+          
+          <label for="start_date">Start date:</label>
+          <input type="date" id="start_date" name="start_date" required>
+          <label for="end_date">End date:</label>
+          <input type="date" id="end_date" name="end_date" required>
+          <input type='submit' name='Book' value='Book' class='button button6'>
+        </form>
+        <br>
+        <br>
+      <% end %>
     <% end %>
   </ul>
 </body>
+

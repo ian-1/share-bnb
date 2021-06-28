@@ -5,6 +5,7 @@ require 'simplecov-console'
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
+require 'launchy'
 require_relative 'setup_test_database'
 require_relative 'web_helpers'
 

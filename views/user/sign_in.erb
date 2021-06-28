@@ -1,7 +1,8 @@
 
 
-<form action='/user/:id' method='patch'>
-<input type='text' name='email' placeholder='Enter your email' required>
-<input type='text' name='password' placeholder='Enter your password' required>
-<input type='submit' class='button button4' name='Submit' value='Sign in' required>
+<form action='/user/:id' method='post'>
+  <input type='text' name='email' placeholder='Enter your email' required>
+  <input type='password' name='password' placeholder='Enter your password' required>
+  <input type='hidden' name='_method' value='PATCH'>
+  <input type='submit' class='button button4' name='Submit' value='Sign in' required>
 </form>

@@ -1,8 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <body>
+      <a href="/">
+        <img 
+          src="https://github.com/ahmad047/makersbnb/blob/master/views/images/image.png?raw=true"
+          width="100";
+          height="50";
+          style="width: 65px; height: 90px;"
+          alt="Makersbnb logo." 
+          MakersBnB
+        />
+      </a>
+      <h1>MakersBnb</h1>
+    </body>
     <style>
-
+      
       img {width: 90%; padding: 20px; display: inline-block; justify-content: space-between;}
 
       h1 {
@@ -11,7 +24,7 @@
       font-family: Helvetica, sans-serif;
       }
       body {
-      color: white;
+      color: black;
       font-family: Helvetica, sans-serif;
       height: 100vh;
       background-color: white; /* For browsers that do not support gradients */
@@ -28,58 +41,93 @@
       }
       .button1 {
         border-radius: 10%;
-        color: white;
+        color: black;
         font-size: 12px;
         padding: 8px 15px;
         position:absolute; top:20px; right:500px;
       }
 
       .button1:hover {
-        background-color: black;
+        background-color: #a1c2c7;
         
       }
 
       .button2 {
         border-radius: 10%;
-        color: white;
+        color: black;
         font-size: 12px;
         padding: 8px 15px;
         position:absolute; top:20px; right:200px;
       }
 
       .button2:hover {
-        background-color: black;
+        background-color: #a1c2c7;
         
       }
 
       .button3 {
         border-radius: 10%;
-        color: white;
+        color: black;
         font-size: 12px;
         padding: 8px 15px;
         position:absolute; top:20px; right:300px;
       }
 
       .button3:hover {
-        background-color: black;
+        background-color: #a1c2c7;
         
       }
 
 
       .button4 {
         border-radius: 10%;
-        color: white;
+        color: black;
         font-size: 12px;
         padding: 8px 15px;
+        background-color: #a1c2c7;
       }
 
       .button4:hover {
-        background-color: black;
+        background-color: #e3f6ff;
+      }
+
+      .button5 {
+        border-radius: 10%;
+        color: black;
+        font-size: 12px;
+        padding: 8px 15px;
+        position:absolute; top:20px; right:400px;
+      }
+
+      .button5:hover {
+        background-color: #a1c2c7;
         
       }
+
+      .button6 {
+        background-color: #a1c2c7;
+        border-radius: 10%;
+        color: black;
+        font-size: 12px;
+        padding: 8px 15px;
+        # position:absolute; top:20px; right:400px;
+      }
+
+      .button6:hover {
+        background-color: #e3f6ff;
+        
+      }
+
 
     
     </style>
   </head>
+
+  <% flash.keys.each do |type| %>
+    <div data-alert class="flash <%= type %> alert-box radius">
+      <%= flash[type] %>
+      <a href="#" class="close">&times;</a>
+    </div>
+  <% end %>
 <%= yield %>
 </html>

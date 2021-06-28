@@ -28,6 +28,22 @@ class User
       new_from_db_result(result)
     end
 
+    def authenticate(email:, password:)
+      sql = "SELECT * FROM app_user WHERE email = '#{email}';"
+      
+      result =  DatabaseConnection.query(sql).first
+      
+      if result.nil?
+        return nil
+      else
+        result
+      end
+
+      return unless BCrypt::Password.new(result['password']) == password
+  
+      User.new(id: result['id'], name: result['name'], email: result['email'])
+    end
+
     private
 
     def new_from_db_result(result)
